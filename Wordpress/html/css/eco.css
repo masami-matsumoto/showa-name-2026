@@ -1,0 +1,28 @@
+.policy-inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    gap: 20px;
+}
+
+.policy-inner li {
+    border-radius: 8px;
+    border: 1px solid #E22B26;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+}
+
+@media (width < 576px) {
+    .policy-inner {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 11px;
+    }
+
+    .policy-inner li {
+        padding: 1rem;
+    }
+}

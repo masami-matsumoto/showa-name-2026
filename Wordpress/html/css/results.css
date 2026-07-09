@@ -1,0 +1,23 @@
+.results-list {
+    display: grid;
+    grid-template-columns: repeat(2, 380px);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.results-img {
+    width: 100%;
+    margin: 0;
+}
+
+@media (orientation: portrait) {
+    .results-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width < 576px) {
+    .results-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

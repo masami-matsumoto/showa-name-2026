@@ -1,0 +1,330 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+.map-section-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.map-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  aspect-ratio: 1440 / 841;
+  margin: 0 auto;
+}
+
+.panel-map-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.map-marker {
+  position: absolute;
+  width: 48px;
+  height: 80px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.map-marker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.map-marker:focus-visible {
+  outline: 3px solid rgba(0, 140, 255, 0.7);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* Marker positions from Figma (node 374:1581) - percentage based for 1440x841 */
+.map-marker-01 {
+  left: 85.69%;
+  top: 43.52%;
+}
+.map-marker-02 {
+  left: 85.69%;
+  top: 13.56%;
+}
+.map-marker-03 {
+  left: 70.76%;
+  top: 31.75%;
+}
+.map-marker-04 {
+  left: 61.88%;
+  top: 51.25%;
+}
+.map-marker-05 {
+  left: 58.96%;
+  top: 23.43%;
+}
+.map-marker-06 {
+  left: 42.64%;
+  top: 52.21%;
+}
+.map-marker-07 {
+  left: 43.01%;
+  top: 18.31%;
+}
+.map-marker-08 {
+  left: 49.65%;
+  top: 3.09%;
+}
+.map-marker-09 {
+  left: 31.67%;
+  top: 61.71%;
+}
+.map-marker-10 {
+  left: 35.83%;
+  top: 51.25%;
+}
+.map-marker-11 {
+  left: 14.24%;
+  top: 58.74%;
+}
+.map-marker-12 {
+  left: 17.43%;
+  top: 31.75%;
+}
+
+.map-section-sp {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  display: none;
+}
+
+.panel-map-img-sp {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-marker-sp {
+  position: absolute;
+  width: 40px;
+  height: 64px;
+  background: url("../img/top-map-img/map-marker.png") no-repeat center/contain;
+  border: none;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+/* SP marker positions from Figma (node 383:1586, 393x705) */
+.map-marker-sp-01 {
+ left: 45.94%;
+  top: 93.83%;
+}
+.map-marker-sp-02 {
+  left: 79.38%;
+  top: 93.83%;
+}
+.map-marker-sp-03 {
+   left: 56.93%;
+  top: 75.60%;
+}
+.map-marker-sp-04 {
+  left: 37.85%;
+  top: 67.17%;
+}
+.map-marker-sp-05 {
+ left: 72.96%;
+  top: 58.58%;
+}
+.map-marker-sp-06 {
+   left: 31.49%;
+  top: 45.53%;
+}
+.map-marker-sp-07 {
+  left: 71.13%;
+  top: 38.65%;
+}
+.map-marker-sp-08 {
+  left: 85.46%;
+  top: 47.09%;
+}
+.map-marker-sp-09 {
+   left: 19.25%;
+  top: 29.93%;
+}
+.map-marker-sp-10 {
+   left: 33.60%;
+  top: 34.19%;
+}
+.map-marker-sp-11 {
+  left: 25.36%;
+  top: 12.77%;
+}
+.map-marker-sp-12 {
+  left: 56.93%;
+  top: 12.77%;
+}
+
+.map-popup {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.map-popup.is-active {
+  display: block;
+}
+
+.map-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.map-popup-item {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  height: 360px;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: none;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.map-popup-item.is-active {
+  display: flex;
+}
+
+.map-popup-left {
+  width: 331px;
+  height: 331px;
+  margin: 15px 0 0 13px;
+  flex: 0 0 auto;
+}
+
+.map-popup-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-popup-right {
+  position: relative;
+  padding: 70px 32px 24px 22px;
+  flex: 1 1 auto;
+}
+
+.map-popup-close {
+  position: absolute;
+  right: 19px;
+  top: 19px;
+  width: 43px;
+  height: 43px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.map-popup-close img {
+  width: 100%;
+  height: 100%;
+}
+
+.map-popup-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.map-popup-02 .map-popup-title,
+.map-popup-06 .map-popup-title {
+  font-size: 22px;
+}
+
+.map-popup-divider {
+  width: 242px;
+  height: 2px;
+  margin: 16px 0 24px;
+}
+
+.map-popup-text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .map-popup-item {
+    width: min(640px, calc(100vw - 32px));
+    height: auto;
+    min-height: 360px;
+  }
+
+  .map-popup-item.is-active {
+    display: block;
+  }
+
+  .map-popup-left {
+    width: calc(100% - 26px);
+    height: auto;
+    aspect-ratio: 331 / 331;
+    margin: 15px 13px 0;
+  }
+
+  .map-popup-right {
+    padding: 18px 20px 22px;
+  }
+
+  .map-popup-divider {
+    width: min(242px, 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .map-section {
+    display: none;
+  }
+
+  .map-section-sp {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .map-section-sp {
+    display: none;
+  }
+}

@@ -1,0 +1,98 @@
+.works2-inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    gap: 20px;
+}
+
+.works2-inner li {
+    border-radius: 8px;
+    border: 1px solid #E22B26;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+}
+
+@media (width < 576px) {
+    .works2-inner {
+        grid-template-columns: repeat(2, 1fr);
+        font-size: 11px;
+    }
+
+    .works2-inner li {
+        padding: 1rem;
+    }
+}
+
+.workflow-list {
+    padding-left: 2rem;
+    padding-bottom: 2.5rem;
+    counter-increment: section;
+    position: relative;
+}
+
+.workflow-list:last-child {
+    padding-bottom: 0.5rem;
+}
+
+.workflow-list::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #E22B26;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.workflow-list::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #E22B26;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.1rem;
+    left: -1rem;
+}
+
+.workflow-title {
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 1.3rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    margin-top: 0;
+}
+
+.workflow-title::after {
+    content: "STEP" counter(section, decimal-leading-zero);
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    color: #E22B26;
+}
+
+.workflow-tag {
+    display: inline-block;
+    border-radius: 16px;
+    border: 1px solid #E22B26;
+    font-weight: 700;
+    padding: 0 20px;
+    position: relative;
+}
+
+.workflow-tag::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #E22B26;
+    position: absolute;
+    top: 1.2rem;
+    left: -30px;
+}

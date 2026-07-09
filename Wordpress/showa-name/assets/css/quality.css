@@ -1,0 +1,42 @@
+.policy-list {
+    margin-left: 2.5rem;
+}
+
+.policy-list li {
+    list-style: decimal;
+}
+
+.iso-lead {
+    font-weight: 700;
+}
+
+.iso-content {
+    margin-top: 40px;
+}
+
+.iso-inner {
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid var(--brand-red-2);
+    max-width: 750px;
+    margin: 20px auto 0;
+    flex-wrap: wrap;
+}
+
+.iso-body {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (width <=768px) {
+    .iso-inner {
+        margin-top: 20px;
+    }
+
+    .iso-body {
+        width: 100%;
+    }
+}
